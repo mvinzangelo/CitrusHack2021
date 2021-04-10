@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class QuestionPrompt : MonoBehaviour
 {
+    bool isActive = false;
     public Question[] questions;
     public GameObject panel;
     int currentQuestion;
@@ -26,15 +27,18 @@ public class QuestionPrompt : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (isActive)
         {
-            if (!allQuestionsAsked())
+            if (Input.GetButtonDown("Fire1"))
             {
-                LoadNewQuestion();
-            }
-            else
-            {
-                return;
+                if (!allQuestionsAsked())
+                {
+                    LoadNewQuestion();
+                }
+                else
+                {
+                    return;
+                }
             }
         }
     }
@@ -141,5 +145,15 @@ public class QuestionPrompt : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void setPlantActive()
+    {
+        isActive = true;
+    }
+
+    public void deactivatePlantScene()
+    {
+        isActive = false;
     }
 }
