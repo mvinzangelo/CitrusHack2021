@@ -67,7 +67,6 @@ public class Flower : MonoBehaviour
             if (touch.phase == TouchPhase.Moved)
             {
                 Debug.Log("touching");
-                // TODO: ADD WATERING FUNCTIONALITY W PARTICLES
                 if (needsWater)
                 {
                     timeSinceLastWater = 0;
