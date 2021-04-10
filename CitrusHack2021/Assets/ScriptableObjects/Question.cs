@@ -10,6 +10,7 @@ public class Question : ScriptableObject
     public string quesiton;
     public Answer[] answers;
     public Answer userAnswer;
+    public bool askedToday;
 
     public void setAnswerToOne()
     {
