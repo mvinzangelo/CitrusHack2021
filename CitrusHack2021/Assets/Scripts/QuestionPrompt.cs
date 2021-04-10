@@ -64,50 +64,65 @@ public class QuestionPrompt : MonoBehaviour
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[0];
         panel.SetActive(false);
-        currentQuestion = Random.Range(0, 10);
-        while (questions[currentQuestion].askedToday == true)
+        if (!allQuestionsAsked())
         {
             currentQuestion = Random.Range(0, 10);
+            while (questions[currentQuestion].askedToday == true)
+            {
+                currentQuestion = Random.Range(0, 10);
+            }
         }
     }
     public void setAnswerToTwo()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[1];
         panel.SetActive(false);
-        currentQuestion = Random.Range(0, 10);
-        while (questions[currentQuestion].askedToday == true)
+        if (!allQuestionsAsked())
         {
             currentQuestion = Random.Range(0, 10);
+            while (questions[currentQuestion].askedToday == true)
+            {
+                currentQuestion = Random.Range(0, 10);
+            }
         }
     }
     public void setAnswerToThree()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[2];
         panel.SetActive(false);
-        currentQuestion = Random.Range(0, 10);
-        while (questions[currentQuestion].askedToday == true)
+        if (!allQuestionsAsked())
         {
             currentQuestion = Random.Range(0, 10);
+            while (questions[currentQuestion].askedToday == true)
+            {
+                currentQuestion = Random.Range(0, 10);
+            }
         }
     }
     public void setAnswerToFour()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[3];
         panel.SetActive(false);
-        currentQuestion = Random.Range(0, 10);
-        while (questions[currentQuestion].askedToday == true)
+        if (!allQuestionsAsked())
         {
             currentQuestion = Random.Range(0, 10);
+            while (questions[currentQuestion].askedToday == true)
+            {
+                currentQuestion = Random.Range(0, 10);
+            }
         }
     }
     public void setAnswerToFive()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[4];
         panel.SetActive(false);
-        currentQuestion = Random.Range(0, 10);
-        while (questions[currentQuestion].askedToday == true)
+        if (!allQuestionsAsked())
         {
             currentQuestion = Random.Range(0, 10);
+            while (questions[currentQuestion].askedToday == true)
+            {
+                currentQuestion = Random.Range(0, 10);
+            }
         }
     }
 
@@ -118,7 +133,6 @@ public class QuestionPrompt : MonoBehaviour
         {
             if (questions[i].askedToday == true)
             {
-                Debug.Log(counter);
                 counter++;
             }
         }
