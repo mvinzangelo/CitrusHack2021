@@ -45,10 +45,12 @@ public class Flower : MonoBehaviour
     private void Update()
     {
         UpdateSprite();
-        if (timeSinceLastWater == 300)
+        if (timeSinceLastWater == wateringInterval)
         {
             needsWater = true;
         }
+
+
         if (progressToNextLevel == expToGrow)
         {
             progressToNextLevel = 0;
@@ -57,6 +59,8 @@ public class Flower : MonoBehaviour
                 growthLevel++;
             }
         }
+
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
