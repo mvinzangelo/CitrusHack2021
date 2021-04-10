@@ -55,8 +55,6 @@ public class Flower : MonoBehaviour
         }
     }
 
-
-
     public void WaterTimer()
     {
         timeSinceLastWater++;
