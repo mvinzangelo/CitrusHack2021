@@ -26,6 +26,11 @@ public class Flower : MonoBehaviour
         flowerName = userName;
     }
 
+    public int currentGrowthLevel() { return growthLevel; }
+    public int currentProgressToNextLevel() { return progressToNextLevel; }
+    public int currentTimeSinceLastWater() { return timeSinceLastWater; }
+    public string getFlowerName() { return flowerName; }
+
     public void UpdateSprite()
     {
         spriteRenderer.sprite = spriteArray[growthLevel];
