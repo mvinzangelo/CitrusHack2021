@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b80a8b9d2272c45a2e148d29b79fe1, type: 3}
+  m_Name: Physical (sleep)
+  m_EditorClassIdentifier: 
+  typeOfQuestion: 1
+  quesiton: How well did you sleep last night?
+  answers:
+  - {fileID: 11400000, guid: 3fab57c48ed08844b8d7fd3b67f64654, type: 2}
+  - {fileID: 11400000, guid: 22b9e73afd591e7458fd1d1f2df3c829, type: 2}
+  - {fileID: 11400000, guid: 553478d9db325eb4a886fee68ec72f45, type: 2}
+  - {fileID: 11400000, guid: 2563a606630de264ba6591b7607bef9c, type: 2}
+  - {fileID: 11400000, guid: fb96dcff68323d8469aec81ff03a9c16, type: 2}
+  userAnswer: {fileID: 0}
