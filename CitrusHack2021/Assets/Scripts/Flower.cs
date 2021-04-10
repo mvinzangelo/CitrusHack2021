@@ -40,7 +40,17 @@ public class Flower : MonoBehaviour
     private void Update()
     {
         UpdateSprite();
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                Vector2 pos = touch.position;
+                Debug.Log("touching");
+                // TODO: ADD WATERING FUNCTIONALITY W PARTICLES
+                timeSinceLastWater = 0;
+            }
+        }
     }
-
 }
 
