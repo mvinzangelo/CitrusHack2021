@@ -26,9 +26,21 @@ public class Flower : MonoBehaviour
         spriteRenderer.sprite = spriteArray[growthLevel];
     }
 
-    private void Update()
+    public void WaterTimer()
     {
         timeSinceLastWater++;
     }
+
+    private void Start()
+    {
+        UpdateSprite();
+        InvokeRepeating(nameof(WaterTimer), 1, 1); // will increase timeSinceLastWater by 1 every second
+    }
+
+    private void Update()
+    {
+        UpdateSprite();
+    }
+
 }
 
