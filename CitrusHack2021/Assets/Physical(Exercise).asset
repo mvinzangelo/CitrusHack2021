@@ -10,8 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2b80a8b9d2272c45a2e148d29b79fe1, type: 3}
-  m_Name: Physical#2
+  m_Name: Physical(Exercise)
   m_EditorClassIdentifier: 
-  typeOfQuestion: 0
-  quesiton: 
-  answers: []
+  typeOfQuestion: 1
+  quesiton: 'Did you exercise today? '
+  answers:
+  - My physical condition doesn't allow me to.
+  - No, I was too busy.
+  - No, I didn't feel like it today.
+  - 'Yeah, just a little bit. '
+  - Yeah, I got a pretty good workout in.

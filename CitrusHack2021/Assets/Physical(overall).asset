@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b80a8b9d2272c45a2e148d29b79fe1, type: 3}
   m_Name: Physical(overall)
   m_EditorClassIdentifier: 
-  typeOfQuestion: 0
-  quesiton: 
-  answers: []
+  typeOfQuestion: 1
+  quesiton: 'How did you feel physically today? '
+  answers:
+  - I feel horrible today.
+  - I'm having an off day.
+  - I'm feeling alright.
+  - I feel pretty good today.
+  - I feel amazing!
