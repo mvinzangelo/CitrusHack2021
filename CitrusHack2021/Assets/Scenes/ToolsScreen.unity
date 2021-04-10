@@ -123,32 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &290078359 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4158338017074995778, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-  m_PrefabInstance: {fileID: 2753358397608395802}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &290078362
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290078359}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1467147478
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +209,10 @@ MonoBehaviour:
   progressToNextLevel: 0
   timeSinceLastWater: 0
   flowerName: 
+  expPerLevel: 50
+  expToGrow: 100
+  wateringInterval: 300
+  needsWater: 0
   spriteArray:
   - {fileID: 21300000, guid: bd916ec4e9884b5439379febb8f2c1db, type: 3}
   - {fileID: 21300000, guid: 59b80e49a946e134b8df881081a43336, type: 3}
@@ -263,11 +241,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467147478}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78300e316f3d92e4a8511de938abd504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 0
+  height: 0
 --- !u!1 &1943005083
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,60 +331,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2753358397608395802
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4158338017074995778, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_Name
-      value: datest?
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720917539044429672, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a72709ca94dcbff4f8dd148201877b97, type: 3}

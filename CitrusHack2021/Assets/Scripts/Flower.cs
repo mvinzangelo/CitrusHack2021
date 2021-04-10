@@ -10,6 +10,11 @@ public class Flower : MonoBehaviour
     public int timeSinceLastWater;
     public string flowerName;
 
+    public int expPerLevel;         // exp gained every time you water when the plant needs it
+    public int expToGrow;           // how much exp to grow to next phase
+    public int wateringInterval;    // how often, in seconds, you need to water the plant
+    public bool needsWater;         // if true, you can water the plant for xp.
+
     public Sprite[] spriteArray;
     public SpriteRenderer spriteRenderer;
 
@@ -40,15 +45,31 @@ public class Flower : MonoBehaviour
     private void Update()
     {
         UpdateSprite();
+        if (timeSinceLastWater == 300)
+        {
+            needsWater = true;
+        }
+        if (progressToNextLevel == expToGrow)
+        {
+            progressToNextLevel = 0;
+            if (growthLevel < 4)
+            {
+                growthLevel++;
+            }
+        }
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
             {
-                Vector2 pos = touch.position;
                 Debug.Log("touching");
                 // TODO: ADD WATERING FUNCTIONALITY W PARTICLES
-                timeSinceLastWater = 0;
+                if (needsWater)
+                {
+                    timeSinceLastWater = 0;
+                    progressToNextLevel += expPerLevel;
+                    needsWater = false; 
+                }
             }
         }
     }
