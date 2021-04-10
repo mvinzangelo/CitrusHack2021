@@ -254,7 +254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3228647511609024383}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5683d58c24d44974fb422ec53c454d05, type: 2}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: setAnswerToThree
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2345919778710276654
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +387,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1267551613999151067}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5683d58c24d44974fb422ec53c454d05, type: 2}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: setAnswerToFour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3147044698255897609
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +654,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5493015186642249950}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5683d58c24d44974fb422ec53c454d05, type: 2}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: setAnswerToFive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3357641214265358709
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +787,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2451152114256699930}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5683d58c24d44974fb422ec53c454d05, type: 2}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: setAnswerToTwo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4879283329387596728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8613076354452101912}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5683d58c24d44974fb422ec53c454d05, type: 2}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: setAnswerToOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8137643830914827564
 GameObject:
   m_ObjectHideFlags: 0
