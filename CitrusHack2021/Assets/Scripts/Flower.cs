@@ -31,9 +31,23 @@ public class Flower : MonoBehaviour
     public int currentTimeSinceLastWater() { return timeSinceLastWater; }
     public string getFlowerName() { return flowerName; }
 
+    public bool needsWatering() { return needsWater; }
+
     public void UpdateSprite()
     {
         spriteRenderer.sprite = spriteArray[growthLevel];
+    }
+
+    public void checkIfGrow()
+    {
+        if (progressToNextLevel == expToGrow)
+        {
+            progressToNextLevel = 0;
+            if (growthLevel < 4)
+            {
+                growthLevel++;
+            }
+        }
     }
 
     public void WaterTimer()
@@ -49,22 +63,10 @@ public class Flower : MonoBehaviour
 
     private void Update()
     {
-        UpdateSprite();
         if (timeSinceLastWater == wateringInterval)
         {
             needsWater = true;
         }
-
-
-        if (progressToNextLevel == expToGrow)
-        {
-            progressToNextLevel = 0;
-            if (growthLevel < 4)
-            {
-                growthLevel++;
-            }
-        }
-
 
         if (Input.touchCount > 0)
         {
@@ -76,7 +78,9 @@ public class Flower : MonoBehaviour
                 {
                     timeSinceLastWater = 0;
                     progressToNextLevel += expPerLevel;
-                    needsWater = false; 
+                    checkIfGrow();
+                    needsWater = false;
+                    Invoke("UpdateSprite", 10.0f);
                 }
             }
         }
