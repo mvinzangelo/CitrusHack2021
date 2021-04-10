@@ -28,6 +28,23 @@ public class Flower : MonoBehaviour
         flowerName = userName;
     }
 
+    // copy constructor
+    public Flower(Flower copy)
+    {
+        growthLevel = copy.growthLevel;
+        progressToNextLevel = copy.progressToNextLevel;
+        timeSinceLastWater = copy.progressToNextLevel;
+        flowerName = copy.flowerName;
+        expPerLevel = copy.expPerLevel;
+        expToGrow = copy.expToGrow;
+        wateringInterval = copy.wateringInterval;
+        needsWater = copy.needsWater;
+        randomNumber = copy.randomNumber;
+        grow = copy.grow;
+        spriteArray = copy.spriteArray;
+        spriteRenderer = copy.spriteRenderer;
+    }
+
     public int currentGrowthLevel() { return growthLevel; }
     public int currentProgressToNextLevel() { return progressToNextLevel; }
     public int currentTimeSinceLastWater() { return timeSinceLastWater; }
@@ -63,6 +80,15 @@ public class Flower : MonoBehaviour
     {
         randomNumber = Random.Range(1, 100);
         return randomNumber;  
+    }
+
+    public void SaveFlower()
+    {
+        Save.SaveFlower(this);
+    }
+    public void LoadFlower()
+    {
+        Save.LoadFlower();
     }
 
     private void Start()
