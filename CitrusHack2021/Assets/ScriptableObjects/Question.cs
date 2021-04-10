@@ -8,5 +8,6 @@ public class Question : ScriptableObject
 {
     public bool typeOfQuestion;
     public string quesiton;
-    public string[] answers;
+    public Answer[] answers;
+    public Answer userAnswer;
 }
