@@ -9,4 +9,5 @@ public class Question : ScriptableObject
     public bool typeOfQuestion;
     public string quesiton;
     public Answer[] answers;
+    public Answer userAnswer;
 }
