@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b80a8b9d2272c45a2e148d29b79fe1, type: 3}
+  m_Name: Physical(FreshAir)
+  m_EditorClassIdentifier: 
+  typeOfQuestion: 1
+  quesiton: Did you get any fresh air today?
+  answers:
+  - {fileID: 11400000, guid: 09d49cbbb8cacd2428c53e44744a9d60, type: 2}
+  - {fileID: 11400000, guid: f68f94977858a1e49990cf4bc91e4d7a, type: 2}
+  - {fileID: 11400000, guid: 176c05860157a3f4e81844a190b49b60, type: 2}
+  - {fileID: 11400000, guid: 4f17c0026224e95489a37c1538f657be, type: 2}
+  - {fileID: 11400000, guid: 545a5b46f2905604694d4dbcbf157710, type: 2}
+  userAnswer: {fileID: 0}

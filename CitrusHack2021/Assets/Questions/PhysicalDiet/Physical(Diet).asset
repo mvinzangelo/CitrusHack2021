@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b80a8b9d2272c45a2e148d29b79fe1, type: 3}
+  m_Name: Physical#1
+  m_EditorClassIdentifier: 
+  typeOfQuestion: 1
+  quesiton: 'Do you feel like you ate healthy today? '
+  answers:
+  - {fileID: 11400000, guid: 852c8d9674f626c4a937e6487973d29a, type: 2}
+  - {fileID: 11400000, guid: 4cb192ee330969347a6e112eea428b95, type: 2}
+  - {fileID: 11400000, guid: cad6bf58a0062834bad4d25954b1bba2, type: 2}
+  - {fileID: 11400000, guid: 9731123243cc74640acaaf52fdcbde28, type: 2}
+  - {fileID: 11400000, guid: d44c4c620a5073a46bacee281aaf6e2a, type: 2}
+  userAnswer: {fileID: 0}
