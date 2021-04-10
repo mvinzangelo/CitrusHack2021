@@ -9,8 +9,6 @@ public class SwipeLogger : MonoBehaviour
 
     private void SwipeDetector_OnSwipe(SwipeData data)
     {
-        if (data.Direction == SwipeDirection.Down)
-        {
-        }
+        Debug.Log(data.Direction);
     }
 }

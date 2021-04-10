@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/PlantScreen.unity
+    guid: e46bb4f9970d0d846854540da7d5b510
+  - enabled: 1
+    path: Assets/Scenes/CalendarScreen.unity
+    guid: e4ecfbe709ec1cc4d9d53e0aefccf0f1
+  - enabled: 1
+    path: Assets/Scenes/WhiteboardScreen.unity
+    guid: 4595677f8107ded4982f09475f1b899e
+  - enabled: 1
+    path: Assets/Scenes/ThermostatScreen.unity
+    guid: 4469417a2a2168848b11bc36dec4e350
   m_configObjects: {}

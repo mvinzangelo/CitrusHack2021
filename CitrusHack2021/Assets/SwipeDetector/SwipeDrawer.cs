@@ -10,6 +10,10 @@ public class SwipeDrawer : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
+        if (lineRenderer == null)
+        {
+            Debug.Log("Null");
+        }
     }
 
     private void SwipeDetector_OnSwipe(SwipeData data)

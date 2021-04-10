@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Whiteboard : MonoBehaviour
+public class Calendar : MonoBehaviour
 {
     Collider2D col;
     public SceneLoader sceneLoader;
@@ -21,7 +21,8 @@ public class Whiteboard : MonoBehaviour
 
         if (col == Physics2D.OverlapPoint(touchPos))
         {
-            sceneLoader.GoToWhiteboard();
+            sceneLoader.GoToCalendar();
         }
     }
 }
+
