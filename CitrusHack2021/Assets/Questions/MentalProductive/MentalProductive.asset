@@ -15,7 +15,9 @@ MonoBehaviour:
   typeOfQuestion: 0
   quesiton: Did you feel productive today?
   answers:
-  - Yeah, I got a lot of work done today!
-  - Yeah, but I still have a lot more things to do.
-  - I tried to be productive, but I found it hard to get a lot of work done today.
-  - I found it hard to get started.
+  - {fileID: 11400000, guid: 34d7df78eb5b8c940a6b8c357989c249, type: 2}
+  - {fileID: 11400000, guid: 6fc66b4dbd022564d8b37062e81ff8b9, type: 2}
+  - {fileID: 11400000, guid: e5eac53a5444c6642b21d49b4eea6629, type: 2}
+  - {fileID: 11400000, guid: 0bd383f9318d34b418932a6b54d10357, type: 2}
+  - {fileID: 11400000, guid: 523c49c3180a84c418d9f54004842fff, type: 2}
+  userAnswer: {fileID: 0}

@@ -15,8 +15,9 @@ MonoBehaviour:
   typeOfQuestion: 0
   quesiton: Did you have positive social interactions today?
   answers:
-  - Yeah, I had a lot of good interactions today!
-  - I had a few good interactions today.
-  - I didn't have very much interactions today.
-  - I had a few negative interactions today...
-  - The interactions I had were mostly negative today...
+  - {fileID: 11400000, guid: 4535964767a9a6544ae90f800a423d1e, type: 2}
+  - {fileID: 11400000, guid: 725f838869abbf64488f60e59d09c2d2, type: 2}
+  - {fileID: 11400000, guid: e7f2e6f58a2c12b42a7d46842342067f, type: 2}
+  - {fileID: 11400000, guid: 9688314dac462d44f9b9ccb0b6933029, type: 2}
+  - {fileID: 11400000, guid: 30bf1cc99f51868438c3c8ad90436bfb, type: 2}
+  userAnswer: {fileID: 0}

@@ -15,8 +15,9 @@ MonoBehaviour:
   typeOfQuestion: 0
   quesiton: How would you rate your mental health today?
   answers:
-  - I feel amazing!
-  - I feel pretty good today.
-  - I'm feeling alright.
-  - I'm having an off-day today.
-  - I feel horrible today.
+  - {fileID: 11400000, guid: b13f4a90f1755e649a762d2830638f9a, type: 2}
+  - {fileID: 11400000, guid: 102637565a5194c49824971e218c50fc, type: 2}
+  - {fileID: 11400000, guid: ba95b3d6f72dc8d459f1ff4626e72f1d, type: 2}
+  - {fileID: 11400000, guid: 504ca780ed0cd5247b3ebd6cdc78f290, type: 2}
+  - {fileID: 11400000, guid: b46559f850566e844a5ae53153ea5c75, type: 2}
+  userAnswer: {fileID: 0}

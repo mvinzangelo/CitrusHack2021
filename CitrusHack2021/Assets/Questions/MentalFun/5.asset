@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944580036c88adc48bf2f7b7bfa24abe, type: 3}
   m_Name: 5
   m_EditorClassIdentifier: 
-  answer: 
-  pointValue: 0
+  answer: Yeah! I had a really fun day today!
+  pointValue: 5
   nullAnswer: 0

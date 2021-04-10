@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944580036c88adc48bf2f7b7bfa24abe, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  answer: 
-  pointValue: 0
+  answer: I tried to do something fun, but I didn't end up enjoying myself.
+  pointValue: 2
   nullAnswer: 0

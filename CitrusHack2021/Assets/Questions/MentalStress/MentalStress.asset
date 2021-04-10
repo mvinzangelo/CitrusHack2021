@@ -15,7 +15,9 @@ MonoBehaviour:
   typeOfQuestion: 0
   quesiton: How much stress did you go through today?
   answers:
-  - I had a really stressful day today...
-  - I was really stressed out today, but I was able to overcome it.
-  - I was a little stressed out today.
-  - I had a really relaxing day today!
+  - {fileID: 11400000, guid: 686f991d325f46d47956c6fe74c50183, type: 2}
+  - {fileID: 11400000, guid: 80eed5714e6390c49b91a6ea82f1e2e3, type: 2}
+  - {fileID: 11400000, guid: 4c4aa4c53dba58340a820c5dd8b50f66, type: 2}
+  - {fileID: 11400000, guid: 9a7b5cc87b18edd48a234abaf26000ab, type: 2}
+  - {fileID: 11400000, guid: 0abfe7f83465baf4db1f9cc3fdff126e, type: 2}
+  userAnswer: {fileID: 0}
