@@ -6,6 +6,7 @@ using UnityEngine;
 public class Flower : MonoBehaviour
 {
     public int growthLevel;
+    public int progressToNextLevel;
     public int timeSinceLastWater;
     public string flowerName;
 
@@ -15,6 +16,7 @@ public class Flower : MonoBehaviour
     public Flower(string userName)
     {
         growthLevel = 0;
+        progressToNextLevel = 0;
         timeSinceLastWater = 0;
         flowerName = userName;
     }
@@ -24,14 +26,9 @@ public class Flower : MonoBehaviour
         spriteRenderer.sprite = spriteArray[growthLevel];
     }
 
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        timeSinceLastWater++;
     }
 }
 
