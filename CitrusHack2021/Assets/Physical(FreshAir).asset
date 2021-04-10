@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Physical(FreshAir)
   m_EditorClassIdentifier: 
   typeOfQuestion: 0
-  quesiton: 
+  quesiton: Did you get any fresh air today?
   answers: []
+  userAnswer: {fileID: 0}

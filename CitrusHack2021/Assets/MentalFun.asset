@@ -15,7 +15,8 @@ MonoBehaviour:
   typeOfQuestion: 0
   quesiton: Did you do anything fun or recreational today?
   answers:
-  - Yeah! I had a really fun day today!
-  - I had an enjoyable day today.
-  - I tried to do something fun, but I didn't end up enjoying myself.
-  - No, I was too busy today...
+  - {fileID: 11400000, guid: 3932200606772154f96763d32506ee21, type: 2}
+  - {fileID: 11400000, guid: ae83f39b6887656429670b562ea72ed4, type: 2}
+  - {fileID: 11400000, guid: 7da089c6b66a2844085d30e8488c91de, type: 2}
+  - {fileID: 11400000, guid: b340a006cb585ce4d94f78119ceb27bb, type: 2}
+  userAnswer: {fileID: 0}
