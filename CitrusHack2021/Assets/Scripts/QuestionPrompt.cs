@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class QuestionPrompt : MonoBehaviour
 {
+    [SerializeField] CameraMovement cam;
     [SerializeField] Data data;
-    [SerializeField] Days day;
+    [SerializeField] Days dayTemplate;
+    Days day;
     bool isActive = false;
     public Question[] questions;
     public GameObject panel;
@@ -15,18 +17,38 @@ public class QuestionPrompt : MonoBehaviour
     bool pushedBack = false;
     bool pushedDayBack = false;
 
+    // singleton code
+    private static QuestionPrompt _instance;
+
     private void Awake()
     {
+        if (_instance == null)
+        {
+
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            //Rest of your Awake code
+
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         panel.SetActive(false);
+    }
+    void Start()
+    {
+        cam = FindObjectOfType<CameraMovement>();
+        day = Instantiate(dayTemplate);
         for (int i = 0; i < 10; i++)
         {
             questions[i].askedToday = false;
         }
         currentQuestion = Random.Range(0, 10);
-    }
-    void Start()
-    {
-
+        day.transform.parent = gameObject.transform;
+        day.date = System.DateTime.Now.ToString("MM/dd");
     }
 
     private void Update()
@@ -35,25 +57,30 @@ public class QuestionPrompt : MonoBehaviour
     }
     public void LoadNewQuestion()
     {
-        questions[currentQuestion].askedToday = true;
-        pushedBack = false;
-        panel.SetActive(true);
-        panel.gameObject.transform.Find("Answer1").GetComponent<Button>().onClick.AddListener(setAnswerToOne);
-        panel.gameObject.transform.Find("Answer2").GetComponent<Button>().onClick.AddListener(setAnswerToTwo);
-        panel.gameObject.transform.Find("Answer3").GetComponent<Button>().onClick.AddListener(setAnswerToThree);
-        panel.gameObject.transform.Find("Answer4").GetComponent<Button>().onClick.AddListener(setAnswerToFour);
-        panel.gameObject.transform.Find("Answer5").GetComponent<Button>().onClick.AddListener(setAnswerToFive);
+        cam = FindObjectOfType<CameraMovement>();
+        if (cam.currentPosition == 1)
+        {
+            questions[currentQuestion].askedToday = true;
+            pushedBack = false;
+            pushedDayBack = false;
+            panel.SetActive(true);
+            panel.gameObject.transform.Find("Answer1").GetComponent<Button>().onClick.AddListener(setAnswerToOne);
+            panel.gameObject.transform.Find("Answer2").GetComponent<Button>().onClick.AddListener(setAnswerToTwo);
+            panel.gameObject.transform.Find("Answer3").GetComponent<Button>().onClick.AddListener(setAnswerToThree);
+            panel.gameObject.transform.Find("Answer4").GetComponent<Button>().onClick.AddListener(setAnswerToFour);
+            panel.gameObject.transform.Find("Answer5").GetComponent<Button>().onClick.AddListener(setAnswerToFive);
 
-        questions[currentQuestion].userAnswer = null;
+            questions[currentQuestion].userAnswer = null;
 
-        panel.gameObject.transform.Find("Question").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].quesiton;
+            panel.gameObject.transform.Find("Question").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].quesiton;
 
-        // change button text
-        panel.gameObject.transform.Find("Answer1").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[0].answer;
-        panel.gameObject.transform.Find("Answer2").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[1].answer;
-        panel.gameObject.transform.Find("Answer3").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[2].answer;
-        panel.gameObject.transform.Find("Answer4").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[3].answer;
-        panel.gameObject.transform.Find("Answer5").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[4].answer;
+            // change button text
+            panel.gameObject.transform.Find("Answer1").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[0].answer;
+            panel.gameObject.transform.Find("Answer2").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[1].answer;
+            panel.gameObject.transform.Find("Answer3").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[2].answer;
+            panel.gameObject.transform.Find("Answer4").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[3].answer;
+            panel.gameObject.transform.Find("Answer5").GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestion].answers[4].answer;
+        }
     }
 
     public void setAnswerToOne()
@@ -163,6 +190,14 @@ public class QuestionPrompt : MonoBehaviour
             {
                 data.push_back_day(day);
                 pushedDayBack = true;
+                day = Instantiate(dayTemplate);
+                day.transform.parent = gameObject.transform;
+                day.date = System.DateTime.Now.ToString("MM/dd");
+                for (int i = 0; i < 10; i++)
+                {
+                    questions[i].askedToday = false;
+                }
+                currentQuestion = Random.Range(0, 10);
             }
             return true;
         }
