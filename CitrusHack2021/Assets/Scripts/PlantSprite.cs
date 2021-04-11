@@ -16,7 +16,7 @@ public class PlantSprite : MonoBehaviour
     void Start()
     {
         currentFlower = FindObjectOfType<Flower>();
-        UpdateSprite();
+        Invoke("UpdateSprite", 1f);
     }
 
     // Update is called once per frame

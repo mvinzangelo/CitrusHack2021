@@ -60,7 +60,7 @@ public class Flower : MonoBehaviour
 
     public void checkIfGrow()
     {
-        if (progressToNextLevel == expToGrow)
+        if (progressToNextLevel >= expToGrow)
         {
             progressToNextLevel = 0;
             if (growthLevel < 4)
@@ -81,17 +81,39 @@ public class Flower : MonoBehaviour
         randomNumber = Random.Range(1, 100);
         return randomNumber;  
     }
+
+    public void SaveFlower()
+    {
+        LocalSave.SaveGame(this);
+    }
+
+    public void LoadFlower()
+    {
+        Flower copy = LocalSave.LoadGame();
+
+        growthLevel = copy.growthLevel;
+        progressToNextLevel = copy.progressToNextLevel;
+        timeSinceLastWater = copy.timeSinceLastWater;
+        flowerName = copy.flowerName;
+        expPerLevel = copy.expPerLevel;
+        expToGrow = copy.expToGrow;
+        wateringInterval = copy.wateringInterval;
+        needsWater = copy.needsWater;
+        randomNumber = copy.randomNumber;
+        grow = copy.grow;
+    }
     private void Start()
     {
 
         //UpdateSprite();
+        LoadFlower();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
     }
 
     private void Update()
     {
-        if (timeSinceLastWater == wateringInterval)
+        if (timeSinceLastWater > wateringInterval)
         {
             needsWater = true;
         }
@@ -110,10 +132,11 @@ public class Flower : MonoBehaviour
                     grow = false;
                     needsWater = false;
                     //Invoke("UpdateSprite", 10.0f);
+                    
                 }
             }
         }
-
+        SaveFlower();
     }
 
 }
