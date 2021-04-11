@@ -4,6 +4,26 @@ using UnityEngine;
 
 public class Days : MonoBehaviour
 {
+    // singleton code
+    private static Days _instance;
+
+    void Awake()
+    {
+
+        if (_instance == null)
+        {
+
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            //Rest of your Awake code
+
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     public string date = System.DateTime.Now.ToString("MM/dd");
     public List<Question> answers;
