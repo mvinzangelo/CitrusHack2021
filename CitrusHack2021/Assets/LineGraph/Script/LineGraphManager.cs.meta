@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: d6ca86519207a40b0a9b5735724cb661
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Blue_Note: {fileID: 4397926135031309949, guid: 2ee4c36e11bfec84d947f4bf67b09b69, type: 3}
+  - Orange_Note: {fileID: 800419344552033081, guid: cb18874ecf47bc3418ba6b3b2ae0102a, type: 3}
+  - Yellow_Note: {fileID: 8340640564932821571, guid: e1b8d008254b14f4b8980d9b7c88807e, type: 3}
+  - linerenderer: {fileID: 100000, guid: 10d9347ce1806467dadac51dda72f85e, type: 3}
+  - pointer: {fileID: 100000, guid: 4bc3c579ecf924baf884cd4ca9bb6948, type: 3}
+  - pointerRed: {fileID: 197398, guid: db3feaf20a7fc4e2694a9259026cfb12, type: 3}
+  - pointerBlue: {fileID: 111534, guid: 34d0f6fdb8fa94d2d942f346142f9783, type: 3}
+  - HolderPrefb: {fileID: 100000, guid: a0340fa40637c423b80d6c2b17c94f71, type: 3}
+  - holder: {fileID: 100000, guid: a0340fa40637c423b80d6c2b17c94f71, type: 3}
+  - xLineNumber: {fileID: 177214, guid: e5394168df7154a56babfe54dc47344d, type: 3}
+  - bluemat: {instanceID: 0}
+  - greenmat: {instanceID: 0}
+  - topValue: {instanceID: 0}
+  - origin: {instanceID: 0}
+  - player1name: {instanceID: 0}
+  - player2name: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
