@@ -44,9 +44,9 @@ public class Data : MonoBehaviour
     {
         Days currDay = day;
         days.Add(currDay);
-        maxIndex += 100;
-        maxPhysicalIndex += 50;
-        maxMentalIndex += 50;
+        maxIndex += 50;
+        maxPhysicalIndex += 25;
+        maxMentalIndex += 25;
 
         totalPhysicalIndex += day.physicalIndex;
         totalMentalIndex += day.mentalIndex;
