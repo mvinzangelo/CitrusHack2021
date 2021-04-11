@@ -76,7 +76,7 @@ public class Flower : MonoBehaviour
 
     //public void UpdateSprite()
     //{
-        //spriteRenderer.sprite = spriteArray[growthLevel];
+    //spriteRenderer.sprite = spriteArray[growthLevel];
     //}
 
 
@@ -98,12 +98,12 @@ public class Flower : MonoBehaviour
     {
         timeSinceLastWater++;
     }
-    public int GetRandomNumber() 
+    public int GetRandomNumber()
     {
         randomNumber = Random.Range(1, 100);
-        return randomNumber;  
+        return randomNumber;
     }
-    /*
+   
     public void SaveFlower()
     {
         LocalSave.SaveGame(this);
@@ -164,6 +164,4 @@ public class Flower : MonoBehaviour
         }
         SaveFlower();
     }
-
 }
-

@@ -13,7 +13,7 @@ public class QuestionPrompt : MonoBehaviour
     public GameObject panel;
     int currentQuestion;
     bool pushedBack = false;
-    int counter = 0;
+    bool pushedDayBack = false;
 
     private void Awake()
     {
@@ -149,6 +149,7 @@ public class QuestionPrompt : MonoBehaviour
 
     public bool allQuestionsAsked()
     {
+        int counter = 0;
         for (int i = 0; i < 10; i++)
         {
             if (questions[i].askedToday == true)
@@ -158,8 +159,11 @@ public class QuestionPrompt : MonoBehaviour
         }
         if (counter == 10)
         {
-            counter++;
-            data.push_back_day(day);
+            if (!pushedDayBack)
+            {
+                data.push_back_day(day);
+                pushedDayBack = true;
+            }
             return true;
         }
         return false;
