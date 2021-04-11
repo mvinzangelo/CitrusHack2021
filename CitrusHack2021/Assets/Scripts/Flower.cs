@@ -17,8 +17,8 @@ public class Flower : MonoBehaviour
     public int randomNumber;
     public bool grow;               // if true, the plant grew. use this for events involving growth.
 
-    public Sprite[] spriteArray;
-    public SpriteRenderer spriteRenderer;
+    //public Sprite[] spriteArray;
+    //public SpriteRenderer spriteRenderer;
 
     public Flower(string userName)
     {
@@ -41,8 +41,8 @@ public class Flower : MonoBehaviour
         needsWater = copy.needsWater;
         randomNumber = copy.randomNumber;
         grow = copy.grow;
-        spriteArray = copy.spriteArray;
-        spriteRenderer = copy.spriteRenderer;
+        //spriteArray = copy.spriteArray;
+        //spriteRenderer = copy.spriteRenderer;
     }
 
     public int currentGrowthLevel() { return growthLevel; }
@@ -53,10 +53,10 @@ public class Flower : MonoBehaviour
     public bool Grew() { return grow; }
     public void UpdateGrow() { grow = false; }
 
-    public void UpdateSprite()
-    {
-        spriteRenderer.sprite = spriteArray[growthLevel];
-    }
+    //public void UpdateSprite()
+    //{
+        //spriteRenderer.sprite = spriteArray[growthLevel];
+    //}
 
     public void checkIfGrow()
     {
@@ -84,7 +84,7 @@ public class Flower : MonoBehaviour
     private void Start()
     {
 
-        UpdateSprite();
+        //UpdateSprite();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
     }
@@ -109,7 +109,7 @@ public class Flower : MonoBehaviour
                     checkIfGrow();
                     grow = false;
                     needsWater = false;
-                    Invoke("UpdateSprite", 10.0f);
+                    //Invoke("UpdateSprite", 10.0f);
                 }
             }
         }
