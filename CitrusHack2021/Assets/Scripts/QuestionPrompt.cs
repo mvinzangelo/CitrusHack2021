@@ -40,14 +40,14 @@ public class QuestionPrompt : MonoBehaviour
     }
     void Start()
     {
-        cam = FindObjectOfType<CameraMovement>();
+        cam = FindObjectOfType<CameraMovement>(); 
         day = Instantiate(dayTemplate);
+        day.transform.parent = transform;
         for (int i = 0; i < 10; i++)
         {
             questions[i].askedToday = false;
         }
         currentQuestion = Random.Range(0, 10);
-        day.transform.parent = gameObject.transform;
         day.date = System.DateTime.Now.ToString("MM/dd");
     }
 
