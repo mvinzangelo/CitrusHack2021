@@ -5,6 +5,7 @@ using UnityEngine;
 // TODO: ADD SAVE AND LOAD TO KEEP FLOWER PROGRESS
 public class Flower : MonoBehaviour
 {
+    [SerializeField] QuestionPrompt questionPrompt;
     private static Flower _instance;
 
     void Awake()
@@ -78,6 +79,7 @@ public class Flower : MonoBehaviour
         //spriteRenderer.sprite = spriteArray[growthLevel];
     //}
 
+
     public void checkIfGrow()
     {
         if (progressToNextLevel >= expToGrow)
@@ -101,7 +103,7 @@ public class Flower : MonoBehaviour
         randomNumber = Random.Range(1, 100);
         return randomNumber;  
     }
-
+    /*
     public void SaveFlower()
     {
         LocalSave.SaveGame(this);
@@ -142,10 +144,14 @@ public class Flower : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
-            {
+            {   
                 Debug.Log("touching");
                 if (needsWater)
                 {
+                    if (!questionPrompt.allQuestionsAsked())
+                    {
+                        questionPrompt.LoadNewQuestion();
+                    }
                     timeSinceLastWater = 0;
                     progressToNextLevel += expPerLevel;
                     checkIfGrow();

@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class QuestionPrompt : MonoBehaviour
 {
+    [SerializeField] Data data;
+    [SerializeField] Days day;
     bool isActive = false;
     public Question[] questions;
     public GameObject panel;
     int currentQuestion;
-    bool touched;
+    bool pushedBack = false;
+    int counter = 0;
 
     private void Awake()
     {
@@ -19,6 +22,7 @@ public class QuestionPrompt : MonoBehaviour
         {
             questions[i].askedToday = false;
         }
+        currentQuestion = Random.Range(0, 10);
     }
     void Start()
     {
@@ -27,24 +31,12 @@ public class QuestionPrompt : MonoBehaviour
 
     private void Update()
     {
-        if (isActive)
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                if (!allQuestionsAsked())
-                {
-                    LoadNewQuestion();
-                }
-                else
-                {
-                    return;
-                }
-            }
-        }
+
     }
-    void LoadNewQuestion()
+    public void LoadNewQuestion()
     {
         questions[currentQuestion].askedToday = true;
+        pushedBack = false;
         panel.SetActive(true);
         panel.gameObject.transform.Find("Answer1").GetComponent<Button>().onClick.AddListener(setAnswerToOne);
         panel.gameObject.transform.Find("Answer2").GetComponent<Button>().onClick.AddListener(setAnswerToTwo);
@@ -67,6 +59,11 @@ public class QuestionPrompt : MonoBehaviour
     public void setAnswerToOne()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[0];
+        if (!pushedBack)
+        {
+            day.push_back_question(questions[currentQuestion]);
+            pushedBack = true;
+        }
         panel.SetActive(false);
         if (!allQuestionsAsked())
         {
@@ -80,6 +77,11 @@ public class QuestionPrompt : MonoBehaviour
     public void setAnswerToTwo()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[1];
+        if (!pushedBack)
+        {
+            day.push_back_question(questions[currentQuestion]);
+            pushedBack = true;
+        }
         panel.SetActive(false);
         if (!allQuestionsAsked())
         {
@@ -93,6 +95,11 @@ public class QuestionPrompt : MonoBehaviour
     public void setAnswerToThree()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[2];
+        if (!pushedBack)
+        {
+            day.push_back_question(questions[currentQuestion]);
+            pushedBack = true;
+        }
         panel.SetActive(false);
         if (!allQuestionsAsked())
         {
@@ -106,6 +113,11 @@ public class QuestionPrompt : MonoBehaviour
     public void setAnswerToFour()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[3];
+        if (!pushedBack)
+        {
+            day.push_back_question(questions[currentQuestion]);
+            pushedBack = true;
+        }
         panel.SetActive(false);
         if (!allQuestionsAsked())
         {
@@ -119,6 +131,11 @@ public class QuestionPrompt : MonoBehaviour
     public void setAnswerToFive()
     {
         questions[currentQuestion].userAnswer = questions[currentQuestion].answers[4];
+        if (!pushedBack)
+        {
+            day.push_back_question(questions[currentQuestion]);
+            pushedBack = true;
+        }
         panel.SetActive(false);
         if (!allQuestionsAsked())
         {
@@ -130,9 +147,8 @@ public class QuestionPrompt : MonoBehaviour
         }
     }
 
-    bool allQuestionsAsked()
+    public bool allQuestionsAsked()
     {
-        int counter = 0;
         for (int i = 0; i < 10; i++)
         {
             if (questions[i].askedToday == true)
@@ -142,6 +158,8 @@ public class QuestionPrompt : MonoBehaviour
         }
         if (counter == 10)
         {
+            counter++;
+            data.push_back_day(day);
             return true;
         }
         return false;

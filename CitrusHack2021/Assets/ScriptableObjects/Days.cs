@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Days", menuName = "Days")]
-public class Days : ScriptableObject
+public class Days : MonoBehaviour
 {
-    public string date;
+    public string date = System.DateTime.Now.ToString("MM/dd");
     public List<Question> answers;
     public int physicalIndex;
     public int mentalIndex;
@@ -14,26 +14,32 @@ public class Days : ScriptableObject
 
     public void push_back_question(Question userQuestion)
     {
-        Question userAnswer = userQuestion;
+        Question userAnswer = Instantiate(userQuestion);
         answers.Add(userAnswer);
         if (userQuestion.typeOfQuestion)
         {
-            mentalIndex++;
+            mentalIndex += userAnswer.userAnswer.pointValue;
         }
         else
         {
-            physicalIndex++;
+            physicalIndex += userAnswer.userAnswer.pointValue;
         }
-        totalIndex++;
+        totalIndex += userAnswer.userAnswer.pointValue;
     }
 
     public void push_back_FRQ(FRQ userFRQ)
     {
-        FRQ = userFRQ;
+        FRQ FRQCopy = Instantiate(userFRQ);
+        FRQ = FRQCopy;
     }
 
     public void setDate()
     {
         date = System.DateTime.Now.ToString("MM/dd");
+    }
+
+    public void Start()
+    {
+        
     }
 }
