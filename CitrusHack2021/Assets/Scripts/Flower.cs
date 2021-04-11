@@ -47,7 +47,7 @@ public class Flower : MonoBehaviour
         growthLevel = 0;
         progressToNextLevel = 0;
         timeSinceLastWater = 0;
-        flowerName = names[Random.Range(0,9)];
+        flowerName = "Chungus";
     }
 
     // copy constructor

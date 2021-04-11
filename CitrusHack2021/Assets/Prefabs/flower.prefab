@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteArray:
-  - {fileID: 21300000, guid: bd916ec4e9884b5439379febb8f2c1db, type: 3}
-  - {fileID: 21300000, guid: 59b80e49a946e134b8df881081a43336, type: 3}
-  - {fileID: 21300000, guid: 66c5cf6bc62bd8048b714d28d04836bd, type: 3}
-  - {fileID: 21300000, guid: e2fa07a373fb5794b9f7016994d80ca0, type: 3}
-  - {fileID: 21300000, guid: 67487ed34f218944493386b3e60dabf7, type: 3}
+  - {fileID: 21300000, guid: e4ab647c28e546c45ad4fea81eff31c7, type: 3}
+  - {fileID: 21300000, guid: 196734b15c1007b4e818eda6f13a5a77, type: 3}
+  - {fileID: 21300000, guid: 59390381a4ad25d4eb83d15acc84ee23, type: 3}
+  - {fileID: 21300000, guid: 071e705dbda0d4b4abb10064d69816e9, type: 3}
+  - {fileID: 21300000, guid: 90a2a5393398f17438385902010cedf9, type: 3}
   spriteRenderer: {fileID: 4452474464453843158}
