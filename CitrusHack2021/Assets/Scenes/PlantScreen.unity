@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4452474464453843158, guid: 4ff0f49d087026647891c30175170331, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 67487ed34f218944493386b3e60dabf7, type: 3}
     - target: {fileID: 4452474464453843159, guid: 4ff0f49d087026647891c30175170331, type: 3}
       propertyPath: m_Name
       value: flower
@@ -140,11 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4452474464453843160, guid: 4ff0f49d087026647891c30175170331, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3
+      value: -3.22
       objectReference: {fileID: 0}
     - target: {fileID: 4452474464453843160, guid: 4ff0f49d087026647891c30175170331, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.43
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4452474464453843160, guid: 4ff0f49d087026647891c30175170331, type: 3}
       propertyPath: m_LocalPosition.z

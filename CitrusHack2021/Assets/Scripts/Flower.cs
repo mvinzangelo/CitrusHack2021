@@ -103,7 +103,7 @@ public class Flower : MonoBehaviour
         randomNumber = Random.Range(1, 100);
         return randomNumber;
     }
-   
+
     public void SaveFlower()
     {
         LocalSave.SaveGame(this);
@@ -128,7 +128,7 @@ public class Flower : MonoBehaviour
     {
 
         //UpdateSprite();
-        LoadFlower();
+        //LoadFlower();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
     }
@@ -144,7 +144,7 @@ public class Flower : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
-            {   
+            {
                 Debug.Log("touching");
                 if (needsWater)
                 {
@@ -157,9 +157,9 @@ public class Flower : MonoBehaviour
                     {
                         questionPrompt.LoadNewQuestion();
                     }
-                   
+
                     //Invoke("UpdateSprite", 10.0f);
-                    
+
                 }
             }
         }

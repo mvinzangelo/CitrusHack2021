@@ -120,9 +120,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6805218674757257252, guid: 5cec0a26d44b13c458715a155aa5a3f6, type: 3}
+      - m_Target: {fileID: 6242004145090690752, guid: 5cec0a26d44b13c458715a155aa5a3f6, type: 3}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: GoToHomeScreen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
