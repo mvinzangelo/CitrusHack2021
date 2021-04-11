@@ -14,9 +14,9 @@ public class Days : MonoBehaviour
 
     public string date = System.DateTime.Now.ToString("MM/dd");
     public List<Question> answers;
-    public int physicalIndex;
-    public int mentalIndex;
-    public int totalIndex;
+    public float physicalIndex;
+    public float mentalIndex;
+    public float totalIndex;
     public FRQ FRQ;
 
     public void push_back_question(Question userQuestion)

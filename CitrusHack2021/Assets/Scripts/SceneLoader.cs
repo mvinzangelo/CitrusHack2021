@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToWhiteboard()
     {
-        SceneManager.LoadScene("WhiteboardScreen", LoadSceneMode.Single);
+        SceneManager.LoadScene("Overall Health", LoadSceneMode.Single);
     }
 
     public void GoToThermastat()

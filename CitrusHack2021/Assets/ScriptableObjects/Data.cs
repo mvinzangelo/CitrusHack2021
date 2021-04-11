@@ -28,17 +28,17 @@ public class Data : MonoBehaviour
 
     public List<Days> days;
 
-    public int totalPhysicalIndex = 0;
-    public int totalMentalIndex = 0;
-    public int totalWellnessIndex = 0;
+    public float totalPhysicalIndex = 0;
+    public float totalMentalIndex = 0;
+    public float totalWellnessIndex = 0;
 
-    public int maxPhysicalIndex = 0;
-    public int maxMentalIndex = 0;
-    public int maxIndex = 0;
+    public float maxPhysicalIndex = 0;
+    public float maxMentalIndex = 0;
+    public float maxIndex = 0;
 
-    public double physicalRating = 0f;
-    public double mentalRating = 0f;
-    public double totalRating = 0f;
+    public float physicalRating = 0f;
+    public float mentalRating = 0f;
+    public float totalRating = 0f;
     
     public void push_back_day(Days day)
     {
@@ -52,8 +52,8 @@ public class Data : MonoBehaviour
         totalMentalIndex += day.mentalIndex;
         totalWellnessIndex += day.totalIndex;
 
-        physicalRating = (1.0 * totalPhysicalIndex) / (1.0 * maxPhysicalIndex);
-        mentalRating = (1.0 * totalMentalIndex) / (1.0 * maxMentalIndex);
-        mentalRating = (1.0 * totalMentalIndex) / (1.0 * maxMentalIndex);
+        physicalRating = totalPhysicalIndex / maxPhysicalIndex;
+        mentalRating = totalMentalIndex / maxMentalIndex;
+        mentalRating = totalMentalIndex / maxMentalIndex;
     }
 }
