@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Days", menuName = "Days")]
 public class Days : MonoBehaviour
 {
+
     public string date = System.DateTime.Now.ToString("MM/dd");
     public List<Question> answers;
     public int physicalIndex;

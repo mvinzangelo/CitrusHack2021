@@ -4,6 +4,28 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
+
+    //singleton code
+    private static Data _instance;
+
+    void Awake()
+    {
+
+        if (_instance == null)
+        {
+
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            //Rest of your Awake code
+
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     public List<Days> days;
 
     public int totalPhysicalIndex = 0;

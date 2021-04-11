@@ -135,11 +135,11 @@ public class Flower : MonoBehaviour
 
     private void Update()
     {
+        questionPrompt = FindObjectOfType<QuestionPrompt>();
         if (timeSinceLastWater > wateringInterval)
         {
             needsWater = true;
         }
-
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
