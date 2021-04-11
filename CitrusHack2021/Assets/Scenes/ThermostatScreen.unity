@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flower: {fileID: 0}
-  text: {fileID: 0}
+  text: {fileID: 64526820}
 --- !u!4 &1320348326
 Transform:
   m_ObjectHideFlags: 0
