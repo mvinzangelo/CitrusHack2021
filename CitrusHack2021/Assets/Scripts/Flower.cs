@@ -6,6 +6,25 @@ using UnityEngine;
 public class Flower : MonoBehaviour
 {
     [SerializeField] QuestionPrompt questionPrompt;
+    private static Flower _instance;
+
+    void Awake()
+    {
+
+        if (_instance == null)
+        {
+
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            //Rest of your Awake code
+
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     public int growthLevel;
     public int progressToNextLevel;
@@ -19,8 +38,8 @@ public class Flower : MonoBehaviour
     public int randomNumber;
     public bool grow;               // if true, the plant grew. use this for events involving growth.
 
-    public Sprite[] spriteArray;
-    public SpriteRenderer spriteRenderer;
+    //public Sprite[] spriteArray;
+    //public SpriteRenderer spriteRenderer;
 
     public Flower(string userName)
     {
@@ -43,8 +62,8 @@ public class Flower : MonoBehaviour
         needsWater = copy.needsWater;
         randomNumber = copy.randomNumber;
         grow = copy.grow;
-        spriteArray = copy.spriteArray;
-        spriteRenderer = copy.spriteRenderer;
+        //spriteArray = copy.spriteArray;
+        //spriteRenderer = copy.spriteRenderer;
     }
 
     public int currentGrowthLevel() { return growthLevel; }
@@ -55,15 +74,15 @@ public class Flower : MonoBehaviour
     public bool Grew() { return grow; }
     public void UpdateGrow() { grow = false; }
 
-    public void UpdateSprite()
-    {
-        spriteRenderer.sprite = spriteArray[growthLevel];
-    }
+    //public void UpdateSprite()
+    //{
+        //spriteRenderer.sprite = spriteArray[growthLevel];
+    //}
 
 
     public void checkIfGrow()
     {
-        if (progressToNextLevel == expToGrow)
+        if (progressToNextLevel >= expToGrow)
         {
             progressToNextLevel = 0;
             if (growthLevel < 4)
@@ -87,14 +106,16 @@ public class Flower : MonoBehaviour
     /*
     public void SaveFlower()
     {
-        Save.SaveFlower(this);
+        LocalSave.SaveGame(this);
     }
+
     public void LoadFlower()
     {
-        Flower copy = Save.LoadFlower();
+        Flower copy = LocalSave.LoadGame();
+
         growthLevel = copy.growthLevel;
         progressToNextLevel = copy.progressToNextLevel;
-        timeSinceLastWater = copy.progressToNextLevel;
+        timeSinceLastWater = copy.timeSinceLastWater;
         flowerName = copy.flowerName;
         expPerLevel = copy.expPerLevel;
         expToGrow = copy.expToGrow;
@@ -102,21 +123,19 @@ public class Flower : MonoBehaviour
         needsWater = copy.needsWater;
         randomNumber = copy.randomNumber;
         grow = copy.grow;
-        spriteArray = copy.spriteArray;
-        spriteRenderer = copy.spriteRenderer;
     }
-    */
     private void Start()
     {
-        //LoadFlower();
-        UpdateSprite();
+
+        //UpdateSprite();
+        LoadFlower();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
     }
 
     private void Update()
     {
-        if (timeSinceLastWater == wateringInterval)
+        if (timeSinceLastWater > wateringInterval)
         {
             needsWater = true;
         }
@@ -138,10 +157,13 @@ public class Flower : MonoBehaviour
                     checkIfGrow();
                     grow = false;
                     needsWater = false;
-                    Invoke("UpdateSprite", 10.0f);
+                    //Invoke("UpdateSprite", 10.0f);
+                    
                 }
             }
         }
+        SaveFlower();
     }
+
 }
 
