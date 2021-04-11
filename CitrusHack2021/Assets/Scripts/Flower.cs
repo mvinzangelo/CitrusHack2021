@@ -128,7 +128,7 @@ public class Flower : MonoBehaviour
     {
 
         //UpdateSprite();
-        LoadFlower();
+        //LoadFlower();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
     }
@@ -148,20 +148,20 @@ public class Flower : MonoBehaviour
                 Debug.Log("touching");
                 if (needsWater)
                 {
-                    if (!questionPrompt.allQuestionsAsked())
-                    {
-                        questionPrompt.LoadNewQuestion();
-                    }
                     timeSinceLastWater = 0;
                     progressToNextLevel += expPerLevel;
                     checkIfGrow();
                     grow = false;
                     needsWater = false;
+                    if (!questionPrompt.allQuestionsAsked())
+                    {
+                        questionPrompt.LoadNewQuestion();
+                    }
+                   
                     //Invoke("UpdateSprite", 10.0f);
                     
                 }
             }
         }
-        SaveFlower();
     }
 }
