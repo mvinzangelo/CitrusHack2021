@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SprayBottle : MonoBehaviour
 {
+    [SerializeField] CameraMovement cam;
+
     private Vector3 touchPosition;
     private ParticleSystem particles;
     private Rigidbody2D rb;
@@ -13,6 +15,7 @@ public class SprayBottle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = FindObjectOfType<CameraMovement>();
         rb = GetComponent<Rigidbody2D>();
         particles = GetComponent<ParticleSystem>();
     }
@@ -20,27 +23,30 @@ public class SprayBottle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (cam.currentPosition == 1)
         {
-            Touch touch = Input.GetTouch(0);
-            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            touchPosition.z = 0;
-            direction = (touchPosition - transform.position);
-            rb.velocity = new Vector2(direction.x, direction.y) * moveSpeed;
-            particles.Play();
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                touchPosition.z = 0;
+                direction = (touchPosition - transform.position);
+                rb.velocity = new Vector2(direction.x, direction.y) * moveSpeed;
+                particles.Play();
 
-            if (touch.phase == TouchPhase.Ended)
+                if (touch.phase == TouchPhase.Ended)
+                { 
+                    rb.velocity = Vector2.zero;
+                }
+            }
+            else 
             { 
                 rb.velocity = Vector2.zero;
+                rb.angularDrag = 0;
+                rb.angularVelocity = 0;
+                particles.Pause();
+                particles.Clear();
             }
-        }
-        else 
-        { 
-            rb.velocity = Vector2.zero;
-            rb.angularDrag = 0;
-            rb.angularVelocity = 0;
-            particles.Pause();
-            particles.Clear();
         }
     }
 }
