@@ -5,6 +5,11 @@ using System.Collections.Generic;
 
 public class LineGraphManager : MonoBehaviour {
 
+	public Data data;
+	public bool isMental;
+	public bool isPhysical;
+	public bool isTotal;
+
 	public GameObject Blue_Note;
 	public GameObject Orange_Note;
 	public GameObject Yellow_Note;
@@ -41,8 +46,18 @@ public class LineGraphManager : MonoBehaviour {
 	private float lrWidth = 0.1f;
 	private int dataGap = 0;
 
+    private void Update()
+    {
+		data = FindObjectOfType<Data>();
+	}
 
-	void Start(){
+    private void Awake()
+    {
+		data = FindObjectOfType<Data>();
+	}
+
+    public void Start(){
+
 		if (is100 == true)
         {
 			highestValue = 100f;
@@ -50,10 +65,20 @@ public class LineGraphManager : MonoBehaviour {
         }
 
 		// adding random data
-		int index = 30;
-		for (int i = 0; i < index; i++) {
+		for (int i = 0; i < data.days.Count; i++) {
 			GraphData gd = new GraphData();
-			gd.marbles = Random.Range(10, 40);
+			if (isMental)
+            {
+				gd.marbles = data.days[i].mentalIndex;
+            }
+			else if (isPhysical)
+            {
+				gd.marbles = data.days[i].physicalIndex;
+			}
+			else if (isTotal)
+            {
+				gd.marbles = data.days[i].totalIndex;
+			}
 			graphDataPlayer1.Add(gd);
 			GraphData gd2 = new GraphData();
 			gd2.marbles = Random.Range(10,47);

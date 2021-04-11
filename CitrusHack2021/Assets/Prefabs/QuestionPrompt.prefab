@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f279c738eb7a0fe4ca32949b74c30954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   data: {fileID: 0}
-  day: {fileID: 0}
+  dayTemplate: {fileID: 0}
   questions:
   - {fileID: 11400000, guid: 5683d58c24d44974fb422ec53c454d05, type: 2}
   - {fileID: 11400000, guid: ff7357834abccdf4690063d27d93c0ac, type: 2}

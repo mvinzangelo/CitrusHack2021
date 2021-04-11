@@ -22,6 +22,6 @@ public class PlantSprite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke("UpdateSprite", 15.0f);
+        Invoke("UpdateSprite", 25.0f);
     }
 }

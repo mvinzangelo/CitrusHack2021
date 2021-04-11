@@ -4,34 +4,56 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
+
+    //singleton code
+    private static Data _instance;
+
+    void Awake()
+    {
+
+        if (_instance == null)
+        {
+
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            //Rest of your Awake code
+
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     public List<Days> days;
 
-    public int totalPhysicalIndex = 0;
-    public int totalMentalIndex = 0;
-    public int totalWellnessIndex = 0;
+    public float totalPhysicalIndex = 0;
+    public float totalMentalIndex = 0;
+    public float totalWellnessIndex = 0;
 
-    public int maxPhysicalIndex = 0;
-    public int maxMentalIndex = 0;
-    public int maxIndex = 0;
+    public float maxPhysicalIndex = 0;
+    public float maxMentalIndex = 0;
+    public float maxIndex = 0;
 
-    public double physicalRating = 0f;
-    public double mentalRating = 0f;
-    public double totalRating = 0f;
+    public float physicalRating = 0f;
+    public float mentalRating = 0f;
+    public float totalRating = 0f;
     
     public void push_back_day(Days day)
     {
         Days currDay = day;
         days.Add(currDay);
-        maxIndex += 100;
-        maxPhysicalIndex += 50;
-        maxMentalIndex += 50;
+        maxIndex += 50;
+        maxPhysicalIndex += 25;
+        maxMentalIndex += 25;
 
         totalPhysicalIndex += day.physicalIndex;
         totalMentalIndex += day.mentalIndex;
         totalWellnessIndex += day.totalIndex;
 
-        physicalRating = (1.0 * totalPhysicalIndex) / (1.0 * maxPhysicalIndex);
-        mentalRating = (1.0 * totalMentalIndex) / (1.0 * maxMentalIndex);
-        mentalRating = (1.0 * totalMentalIndex) / (1.0 * maxMentalIndex);
+        physicalRating = totalPhysicalIndex / maxPhysicalIndex;
+        mentalRating = totalMentalIndex / maxMentalIndex;
+        mentalRating = totalMentalIndex / maxMentalIndex;
     }
 }

@@ -7,6 +7,7 @@ public class Flower : MonoBehaviour
 {
     [SerializeField] QuestionPrompt questionPrompt;
     private static Flower _instance;
+    private readonly string[] names = { "Holly", "Lilly", "Pointy", "Katniss", "Bloomy", "Sneezy", "Smeagol", "Chungus", "Baba", "Corny" };
 
     void Awake()
     {
@@ -41,12 +42,12 @@ public class Flower : MonoBehaviour
     //public Sprite[] spriteArray;
     //public SpriteRenderer spriteRenderer;
 
-    public Flower(string userName)
+    public Flower()
     {
         growthLevel = 0;
         progressToNextLevel = 0;
         timeSinceLastWater = 0;
-        flowerName = userName;
+        flowerName = names[Random.Range(0,9)];
     }
 
     // copy constructor
@@ -93,7 +94,10 @@ public class Flower : MonoBehaviour
             }
         }
     }
-
+    public void SetFlowerName(string s)
+    {
+        flowerName = s;
+    }
     public void WaterTimer()
     {
         timeSinceLastWater++;
@@ -128,18 +132,18 @@ public class Flower : MonoBehaviour
     {
 
         //UpdateSprite();
-        //LoadFlower();
+        LoadFlower();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
     }
 
     private void Update()
     {
+        questionPrompt = FindObjectOfType<QuestionPrompt>();
         if (timeSinceLastWater > wateringInterval)
         {
             needsWater = true;
         }
-
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);

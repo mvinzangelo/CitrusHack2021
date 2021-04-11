@@ -15,7 +15,7 @@ public static class LocalSave
         PlayerPrefs.SetInt("wateringInterval", currentFlower.wateringInterval);
         PlayerPrefs.SetInt("randomNumber", currentFlower.randomNumber);
         PlayerPrefs.SetString("flowerName", currentFlower.flowerName);
-
+        PlayerPrefs.Save();
     }
 
     public static Flower LoadGame()

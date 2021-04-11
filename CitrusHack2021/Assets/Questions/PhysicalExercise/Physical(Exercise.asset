@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b80a8b9d2272c45a2e148d29b79fe1, type: 3}
   m_Name: Physical(Exercise
   m_EditorClassIdentifier: 
-  typeOfQuestion: 0
+  typeOfQuestion: 1
   quesiton: 'Did you exercise today? '
   answers:
   - {fileID: 11400000, guid: 7018f18fe4872654b9faf286a1edbb01, type: 2}
@@ -20,4 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 30920e13c1372a348b11de3ead63bf77, type: 2}
   - {fileID: 11400000, guid: d9d7604364064cf4f8543a8883b8020b, type: 2}
   - {fileID: 11400000, guid: 78fa62ea33402d54cb060aaf10f86936, type: 2}
-  userAnswer: {fileID: 0}
+  userAnswer: {fileID: 11400000, guid: 78fa62ea33402d54cb060aaf10f86936, type: 2}
+  askedToday: 0
