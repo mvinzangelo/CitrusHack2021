@@ -7,6 +7,7 @@ public class Flower : MonoBehaviour
 {
     [SerializeField] QuestionPrompt questionPrompt;
     private static Flower _instance;
+    private readonly string[] names = { "Holly", "Lilly", "Pointy", "Katniss", "Bloomy", "Sneezy", "Smeagol", "Chungus", "Baba", "Corny" };
 
     void Awake()
     {
@@ -41,12 +42,12 @@ public class Flower : MonoBehaviour
     //public Sprite[] spriteArray;
     //public SpriteRenderer spriteRenderer;
 
-    public Flower(string userName = "")
+    public Flower()
     {
         growthLevel = 0;
         progressToNextLevel = 0;
         timeSinceLastWater = 0;
-        flowerName = userName;
+        flowerName = names[Random.Range(0,9)];
     }
 
     // copy constructor
