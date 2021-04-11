@@ -5,6 +5,26 @@ using UnityEngine;
 // TODO: ADD SAVE AND LOAD TO KEEP FLOWER PROGRESS
 public class Flower : MonoBehaviour
 {
+    private static Flower _instance;
+
+    void Awake()
+    {
+
+        if (_instance == null)
+        {
+
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            //Rest of your Awake code
+
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     public int growthLevel;
     public int progressToNextLevel;
     public int timeSinceLastWater;
