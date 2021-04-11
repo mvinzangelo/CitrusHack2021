@@ -23,7 +23,7 @@ public class TouchCalendar : MonoBehaviour
 
 
 
-       if (Input.touchCount > .2)
+       if (Input.touchCount > .2                                                                                      )
         {
             Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             if (GetComponent<Collider2D>().OverlapPoint(wp))
