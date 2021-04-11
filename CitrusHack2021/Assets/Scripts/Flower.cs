@@ -128,7 +128,7 @@ public class Flower : MonoBehaviour
     {
 
         //UpdateSprite();
-        //LoadFlower();
+        LoadFlower();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
     }
