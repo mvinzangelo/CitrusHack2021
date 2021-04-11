@@ -28,6 +28,23 @@ public class Flower : MonoBehaviour
         flowerName = userName;
     }
 
+    // copy constructor
+    public Flower(Flower copy)
+    {
+        growthLevel = copy.growthLevel;
+        progressToNextLevel = copy.progressToNextLevel;
+        timeSinceLastWater = copy.progressToNextLevel;
+        flowerName = copy.flowerName;
+        expPerLevel = copy.expPerLevel;
+        expToGrow = copy.expToGrow;
+        wateringInterval = copy.wateringInterval;
+        needsWater = copy.needsWater;
+        randomNumber = copy.randomNumber;
+        grow = copy.grow;
+        spriteArray = copy.spriteArray;
+        spriteRenderer = copy.spriteRenderer;
+    }
+
     public int currentGrowthLevel() { return growthLevel; }
     public int currentProgressToNextLevel() { return progressToNextLevel; }
     public int currentTimeSinceLastWater() { return timeSinceLastWater; }
@@ -65,8 +82,30 @@ public class Flower : MonoBehaviour
         return randomNumber;  
     }
 
+    public void SaveFlower()
+    {
+        Save.SaveFlower(this);
+    }
+    public void LoadFlower()
+    {
+        Flower copy = Save.LoadFlower();
+        growthLevel = copy.growthLevel;
+        progressToNextLevel = copy.progressToNextLevel;
+        timeSinceLastWater = copy.progressToNextLevel;
+        flowerName = copy.flowerName;
+        expPerLevel = copy.expPerLevel;
+        expToGrow = copy.expToGrow;
+        wateringInterval = copy.wateringInterval;
+        needsWater = copy.needsWater;
+        randomNumber = copy.randomNumber;
+        grow = copy.grow;
+        spriteArray = copy.spriteArray;
+        spriteRenderer = copy.spriteRenderer;
+    }
+
     private void Start()
     {
+        LoadFlower();
         UpdateSprite();
         InvokeRepeating(nameof(WaterTimer), 1, 1);
         InvokeRepeating(nameof(GetRandomNumber), 5, 5);
