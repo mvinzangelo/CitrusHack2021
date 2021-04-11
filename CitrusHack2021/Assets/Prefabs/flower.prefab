@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b99f48b206706478cc8a9221425c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questionPrompt: {fileID: 0}
   growthLevel: 0
   progressToNextLevel: 0
   timeSinceLastWater: 0
@@ -54,13 +55,6 @@ MonoBehaviour:
   needsWater: 0
   randomNumber: 0
   grow: 0
-  spriteArray:
-  - {fileID: 21300000, guid: bd916ec4e9884b5439379febb8f2c1db, type: 3}
-  - {fileID: 21300000, guid: 59b80e49a946e134b8df881081a43336, type: 3}
-  - {fileID: 21300000, guid: 66c5cf6bc62bd8048b714d28d04836bd, type: 3}
-  - {fileID: 21300000, guid: e2fa07a373fb5794b9f7016994d80ca0, type: 3}
-  - {fileID: 21300000, guid: 67487ed34f218944493386b3e60dabf7, type: 3}
-  spriteRenderer: {fileID: 4452474464453843158}
 --- !u!212 &4452474464453843158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,14 +95,14 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bd916ec4e9884b5439379febb8f2c1db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 5.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

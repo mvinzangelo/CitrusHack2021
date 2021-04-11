@@ -179,10 +179,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4452474464453843161, guid: 4ff0f49d087026647891c30175170331, type: 3}
-      propertyPath: grow
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4452474464453843161, guid: 4ff0f49d087026647891c30175170331, type: 3}
       propertyPath: questionPrompt
       value: 
       objectReference: {fileID: 374051667}
