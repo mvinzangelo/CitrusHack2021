@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstTimeStart.unity
     guid: 0b20cd629372dcd469f6309d597dd5ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NameFlower.unity
     guid: 489011e9b9d04e74fb72b90220e3d623
   m_configObjects: {}

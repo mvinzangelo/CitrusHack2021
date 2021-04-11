@@ -20,7 +20,7 @@ public static class LocalSave
 
     public static Flower LoadGame()
     {
-        Flower data = new Flower(PlayerPrefs.GetString("flowerName"));
+        Flower data = new Flower();
         data.growthLevel = PlayerPrefs.GetInt("growthLevel");
         data.progressToNextLevel = PlayerPrefs.GetInt("progressToNextLevel");
         data.timeSinceLastWater = PlayerPrefs.GetInt("timeSinceLastWater");
