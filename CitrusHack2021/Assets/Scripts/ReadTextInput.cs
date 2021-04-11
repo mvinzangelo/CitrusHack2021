@@ -10,6 +10,7 @@ public class ReadTextInput : MonoBehaviour
 
     public void StoreName()
     {
+        inputField.GetComponent<InputField>();
         theName = inputField.GetComponent<Text>().text;
         Debug.Log(theName);
     }

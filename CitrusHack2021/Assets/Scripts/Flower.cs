@@ -41,7 +41,7 @@ public class Flower : MonoBehaviour
     //public Sprite[] spriteArray;
     //public SpriteRenderer spriteRenderer;
 
-    public Flower(string userName)
+    public Flower(string userName = "")
     {
         growthLevel = 0;
         progressToNextLevel = 0;
@@ -93,7 +93,10 @@ public class Flower : MonoBehaviour
             }
         }
     }
-
+    public void SetFlowerName(string s)
+    {
+        flowerName = s;
+    }
     public void WaterTimer()
     {
         timeSinceLastWater++;
